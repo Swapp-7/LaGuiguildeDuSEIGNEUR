@@ -11,3 +11,7 @@ V0.2
 
 v0.2.1
 - Ajout des methods à la route
+
+v0.3
+- Ajout de la route create character
+- Ajout de la sauvegarde en base de données

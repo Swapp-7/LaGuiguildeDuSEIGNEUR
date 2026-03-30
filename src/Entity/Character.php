@@ -7,33 +7,34 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CharacterRepository::class)]
+#[ORM\Table(name: '`character`')]
 class Character
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = 1;
+    private ?int $id = null;
 
     #[ORM\Column(length: 20)]
-    private ?string $name = 'Mamanayau';
+    private ?string $name = null;
 
     #[ORM\Column(length: 50)]
-    private ?string $surname = 'Poussière de bissap';
+    private ?string $surname = null;
 
     #[ORM\Column(length: 20, nullable: true)]
-    private ?string $caste = 'Magicien';
+    private ?string $caste = null;
 
     #[ORM\Column(length: 20, nullable: true)]
-    private ?string $knowledge = 'Sciences';
+    private ?string $knowledge = null;
 
     #[ORM\Column(type: Types::SMALLINT, nullable: true)]
-    private ?int $intellingence = 180;
+    private ?int $intelligence = null;
 
     #[ORM\Column(type: Types::SMALLINT, nullable: true)]
-    private ?int $strength = 180;
+    private ?int $strength = null;
 
     #[ORM\Column(length: 50, nullable: true)]
-    private ?string $image = '/seigneur/anfauglith.webp';
+    private ?string $image = null;
 
     #[ORM\Column(length: 20)]
     private ?string $slug = null;
@@ -97,14 +98,14 @@ class Character
         return $this;
     }
 
-    public function getIntellingence(): ?int
+    public function getIntelligence(): ?int
     {
-        return $this->intellingence;
+        return $this->intelligence;
     }
 
-    public function setIntellingence(?int $intellingence): static
+    public function setIntelligence(?int $intelligence): static
     {
-        $this->intellingence = $intellingence;
+        $this->intelligence = $intelligence;
 
         return $this;
     }
@@ -175,16 +176,3 @@ class Character
     }
 }
 
-// class Character
-// {
-//     private ?int $id = 1;
-//     private ?string $name = 'MAMAnfauglith';
-//     private ?string $surname = 'Poussière de bissap';
-//     private ?string $caste = 'Magicien';
-//     private ?string $knowledge = 'Sciences';
-//     private ?int $intelligence = 180;
-//     private ?int $strength = 180;
-//     private ?string $image = '/Seigneur/anfauglith.webp';
-
-//     
-// }
