@@ -3,13 +3,17 @@ namespace App\Service;
 use DateTime; 
 use App\Entity\Character;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Repository\CharacterRepository;
 
 class CharacterService implements CharacterServiceInterface
 {
 
     public function __construct(
+        private CharacterRepository $characterRepository,
         private EntityManagerInterface $em,
     ) {}
+
+    
     // Creates the character
     public function create(): Character
     {
@@ -22,6 +26,7 @@ class CharacterService implements CharacterServiceInterface
         $character->setKnowledge('Sciences');
         $character->setIntelligence(180);
         $character->setStrength(180);
+        $character->setIdentifier(hash('sha1', uniqid()));  
         $character->setImage('/dames/anardil.webp');
         $character->setCreation(new DateTime());
 

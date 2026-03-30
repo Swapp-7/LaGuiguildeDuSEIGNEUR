@@ -45,6 +45,9 @@ class Character
     #[ORM\Column]
     private ?\DateTime $creation = null;
 
+    #[ORM\Column(length: 40)]
+    private ?string $identifier = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -171,6 +174,18 @@ class Character
     public function setCreation(\DateTime $creation): static
     {
         $this->creation = $creation;
+
+        return $this;
+    }
+
+    public function getIdentifier(): ?string
+    {
+        return $this->identifier;
+    }
+
+    public function setIdentifier(string $identifier): static
+    {
+        $this->identifier = $identifier;
 
         return $this;
     }

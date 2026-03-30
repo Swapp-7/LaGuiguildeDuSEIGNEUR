@@ -15,3 +15,8 @@ v0.2.1
 v0.3
 - Ajout de la route create character
 - Ajout de la sauvegarde en base de données
+
+v0.4
+- Ajout des identifiers
+- Modification de la route display character
+- Utilisation du fetch automatique
